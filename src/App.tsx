@@ -1,34 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {solveSudoku} from "./services/SudokuSolver"
+import SudokuTable from "./components/SudokuTable"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const testSudoku = [
+    [null, 4, 8, null, 6, null, 1, null, null],
+    [null, null, null, 4, null, null, null, null, null],
+    [6, null, null, 5, 7, null, null, null, 2],
+    [null, 2, 1, null, null, null, 4, 6, null],
+    [null, 6, null, 9, null, 4, null, 5, null],
+    [null, 7, null, null, null, null, 3, 2, null],
+    [1, null, null, null, 5, 2, null, null, 4],
+    [null, null, null, null, null, 7, null, null, null],
+    [null, null, 4, null, 1, null, 2, 7, null]
+  ]
+
+  solveSudoku(testSudoku);
+
+  const sudokuValues = [
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  ]
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <SudokuTable sudokuValues={sudokuValues}></SudokuTable>
+    </div>
   )
 }
 
