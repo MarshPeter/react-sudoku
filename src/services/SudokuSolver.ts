@@ -23,7 +23,7 @@ export function solveSudoku(sudoku: (number | null)[][]) {
 }
 
 // returns true if row has number in it already
-function rowHasNumber(sudokuRow : (number | null)[], n: number) : boolean {
+export function rowHasNumber(sudokuRow : (number | null)[], n: number) : boolean {
   
   for (let i = 0; i < sudokuRow.length; i++) {
     if (sudokuRow[i] === n) {
@@ -35,7 +35,7 @@ function rowHasNumber(sudokuRow : (number | null)[], n: number) : boolean {
 }
 
 // returns true if col has number in it already
-function colHasNumber(sudoku : (number | null)[][], col: number, n: number) : boolean {
+export function colHasNumber(sudoku : (number | null)[][], col: number, n: number) : boolean {
 
   for (let i = 0; i < sudoku.length; i++) {
     if (sudoku[i][col] === n) {
@@ -47,12 +47,12 @@ function colHasNumber(sudoku : (number | null)[][], col: number, n: number) : bo
 }
 
 // return true if grid has number in it already
-function gridHasNumber(sudoku : (number | null)[][], row: number, col: number, n: number) : boolean {
+export function gridHasNumber(sudoku : (number | null)[][], row: number, col: number, n: number) : boolean {
 
 }
 
-// return grid extremes if current row and column index
+// return grid extremes for current row and column index
 // i.e row=0, col=1, returns [(0, 0), (2, 2)], row=3, col=3, returns [(3, 3), (5, 5)]
-function findGridExtremes(row, col)
+export function findGridExtremes(row, col) {}
 
 

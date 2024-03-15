@@ -2,7 +2,7 @@ import {solveSudoku} from "./services/SudokuSolver"
 import SudokuTable from "./components/SudokuTable"
 
 function App() {
-
+ 
   const testSudoku = [
     [null, 4, 8, null, 6, null, 1, null, null],
     [null, null, null, 4, null, null, null, null, null],
